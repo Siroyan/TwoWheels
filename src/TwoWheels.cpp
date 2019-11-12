@@ -13,22 +13,16 @@ void TwoWheels::setup(uint8_t A1, uint8_t A2, uint8_t B1, uint8_t B2){
     Right2 = B2;
 }
 
-void TwoWheels::turnLeftMotor(float value){
-    if(value < 0){
-        analogWrite(Left1, 0);
-        analogWrite(Left2, abs(value));
-    }else{
-        analogWrite(Left1, value);
-        analogWrite(Left2, 0);
-    }
+void TwoWheels::turnCW(float value){
+    analogWrite( Left1, abs(value));
+    analogWrite( Left2, 0);
+    analogWrite(Right1, 0);
+    analogWrite(Right2, abs(value));
 }
 
-void TwoWheels::turnRightMotor(float value){
-    if(value < 0){
-        analogWrite(Right1, 0);
-        analogWrite(Right2, abs(value));
-    }else{
-        analogWrite(Right1, value);
-        analogWrite(Right2, 0);
-    }
+void TwoWheels::turnCCW(float value){
+    analogWrite( Left1, 0);
+    analogWrite( Left2, abs(value));
+    analogWrite(Right1, abs(value));
+    analogWrite(Right2, 0);
 }
