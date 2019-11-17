@@ -1,16 +1,17 @@
 #include "TwoWheels.h"
+#include <Arduino.h>
 #include <Math.h>
 
 TwoWheels::TwoWheels(){
     /* hoge */
 }
 
-void TwoWheels::setup(uint8_t A1, uint8_t A2, uint8_t B1, uint8_t B2){
+void TwoWheels::setup(uint8_t MA1, uint8_t MA2, uint8_t MB1, uint8_t MB2){
     /* pin設定 */
-    Left1 = A1;
-    Left2 = A2;
-    Right1 = B1;
-    Right2 = B2;
+    Left1 = MA1;
+    Left2 = MA2;
+    Right1 = MB1;
+    Right2 = MB2;
 }
 
 void TwoWheels::turnCW(float value){
